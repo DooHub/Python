@@ -1,5 +1,6 @@
 # Python for Coding Test
 ## 본 내용은 '이것이 코딩 테스트' 책을 근거로 본인 이해한 내용을 정리 할 목적으로 작성하였습니다. 저자권에 문작 되면 삭제 하겠습니다.
+![codingtest](https://github.com/DooHub/Python/assets/99073912/d6bb3304-70a4-49e6-bb38-f261ecd47534)
 1. Basic Python
    - Input method
      ```python
