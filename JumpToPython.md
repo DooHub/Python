@@ -27,3 +27,12 @@ for i in range(3):
 result=[x*y for x in range(2,10)
 ... for y in range(1,10)]
 ```
+
+### 매개변수(Parameter) vs 인수(Arguments)
+
+```python
+def add(a,b): # 함수의 입력을 이야기 할 때 Parameter라고 함
+  return a+b
+
+print(add(3,4)) #함수를 호출 할 때 전달하는 입력 값을 Arguments라고 함.
+```
