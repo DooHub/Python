@@ -36,3 +36,15 @@ def add(a,b): # 함수의 입력을 이야기 할 때 Parameter라고 함
 
 print(add(3,4)) #함수를 호출 할 때 전달하는 입력 값을 Arguments라고 함.
 ```
+### 함수의 Return값은 하나 (여러개의 경우 tuple로 묶어서 보냄)
+
+```python
+def add_and_mul(a,b):
+    return a+b,a*b,a/b
+
+d=add_and_mul(3,4)
+a,b,c=add_and_mul(3,4)
+```
+d=(7,12,0.75) -->tuple
+a,b=7,12 -->int
+c=0.75 -->float
