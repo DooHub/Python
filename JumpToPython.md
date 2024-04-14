@@ -75,7 +75,8 @@ with open('text.txt','a') as f
 ```
 ### Class에 대해
 class내에 구현 된 함수를 부를 때는 통상 Method라고 부른다.  
-Magic Method는 __이름__ 이렇게 양쪽에 underscore로 구성 된 것을 말한다. 
+Magic Method는 __이름__ 이렇게 양쪽에 underscore로 구성 된 것을 말한다.  
+Magic Method, Special Method라고도 불림 파이썬이 내부적으로 구현된(빌트인) 메소드를 구현함
 
 ### 객체(Object)와 인스턴스(Instance)관계
 Class로 만든 객체를 인스턴스라고도 한다.  
