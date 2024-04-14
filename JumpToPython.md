@@ -78,3 +78,20 @@ Class로 만든 객체를 인스턴스라고도 한다.
 Cookie()라는 Class가 있다고 할 때,  
 관계 위주로 설명 할 때 a=Cookie() 이면 a는 Cookie()클래스의 인스턴스 이다.  
 자체만을 말 할 때 a=Cookie()이면 a는 객체이고, Cookie는 클래스 이다.
+
+### Module 사용 방법
+mod1이라는 모듈 내에 add와 sub 함수가 있는 경우
+1. import 모듈이름
+```python
+import mod1
+# 모둘이름을 포함하여 함수 호출
+mod1.add() 
+mod1.sub()
+```
+2. from 모듈이름 import 모듈 함수(모듈 내 있는 함수)
+```python
+from mod1 import add,sub
+# 함수이름 바로 사용하여 호출
+add() 
+sub()
+```
