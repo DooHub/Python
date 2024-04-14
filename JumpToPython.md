@@ -54,3 +54,22 @@ c=0.75 -->float
 ```python
 add=lambda a,b : a+b
 ```
+### file - open/read 관련
+```python
+#write 경우, 줄바꿈을 위해서는 마지막에 개행 문자 삽입 \n
+f=open('text.txt','a')
+a=1
+line=f'write line{a}\n'
+f.write(line)
+f.close()
+#Read 관련
+linedata=f.readline() #기행문자 기준으로  한줄씩 읽음. linedata tyep str
+linesdata=f.readlines() #전체를 읽어 list로 구성 list단위는 개행문자 기준. linesdata tyep list
+data=f.read() #전체를 읽어 str으로 저장함 개행문자도 포함 되어 있음.
+#통상 사용 별도 close()함수 호출 안 하기 위해 with 사용
+with open('text.txt','a') as f
+  a=1
+  line=f'write line{a}\n'
+  f.write(line)
+  data=f.read()
+```
