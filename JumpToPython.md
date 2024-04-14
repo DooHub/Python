@@ -84,6 +84,24 @@ Cookie()라는 Class가 있다고 할 때,
 관계 위주로 설명 할 때 a=Cookie() 이면 a는 Cookie()클래스의 인스턴스 이다.  
 자체만을 말 할 때 a=Cookie()이면 a는 객체이고, Cookie는 클래스 이다.
 
+### Method Overriding이란
+자식 클래스가 부모 클래스에 있는 메서드를 자식 클래스에 재 정의 할 경우-같은 이름.
+```python
+# Parent class
+class Parent:
+  def __init__(self):
+    pass
+  def div(self,a,b):
+    return a/b
+# Child class
+class child(Parent):
+  def div(self,a,b): # Zerodivision error방지 추가
+    if b==0:
+      return 0
+    else:
+      return a/b
+```
+
 ### Module 사용 방법
 실행 source나 python 경로상에 사용하고자 하는 Module 파일이 위치 혹은 접근 가능해야 한다.  
 mod1이라는 모듈 내에 add와 sub 함수가 있는 경우  
@@ -113,3 +131,13 @@ try:
  수행 구문  
 except 발생 오류 as 오류메시지 변수 :  
  오류 발생 시 수행 할 구문  
+
+ ```python
+try:
+  4/0
+except : # error발생하면 무조건 실행
+  print("error")
+  4/0
+except ZeroDivisionError as e: # 발생 된 eorr가 ZeroDivisionError이면 수행
+  print(e) # 전달 받은 error 메시지를 출력
+```
