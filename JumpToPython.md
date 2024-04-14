@@ -73,3 +73,8 @@ with open('text.txt','a') as f
   f.write(line)
   data=f.read()
 ```
+### 객체(Object)와 인스턴스(Instance)관계
+Class로 만든 객체를 인스턴스라고도 한다.  
+Cookie()라는 Class가 있다고 할 때,  
+관계 위주로 설명 할 때 a=Cookie() 이면 a는 Cookie()클래스의 인스턴스 이다.  
+자체만을 말 할 때 a=Cookie()이면 a는 객체이고, Cookie는 클래스 이다.
