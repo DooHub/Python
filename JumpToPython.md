@@ -48,3 +48,9 @@ a,b,c=add_and_mul(3,4)
 d=(7,12,0.75) -->tuple
 a,b=7,12 -->int
 c=0.75 -->float
+
+### lambda을 이용 방법
+표현 방법 --> lambda 매개변수 1, 매개변수 2 ... : 매개변수를 이용한 수식
+```python
+add=lambda a,b : a+b
+```
