@@ -141,3 +141,15 @@ except : # error발생하면 무조건 실행
 except ZeroDivisionError as e: # 발생 된 eorr가 ZeroDivisionError이면 수행
   print(e) # 전달 받은 error 메시지를 출력
 ```
+### Error 발생 시키기
+rasie NotImplementedError 을 Error발생 시키기 위한 부분에 삽입한다.  
+class에 사용 할 경우, overriding방법을 사용하여 해당 Method의 Error을 회피 할 수 있다.
+```python
+class Bird:
+  def fly(self):
+    raise NotImplementedError
+
+class Eagle(Bird):
+  def fly(self):
+    print("Overriding to avoid error")
+```
