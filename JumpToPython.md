@@ -176,3 +176,9 @@ print(list(filter(filter_positive,a)))
 print(list(filter(lambda x:x>0,a)))
   
 ```
+### map함수
+filter함수와 동일 구조이지만, 함수 결과의 참/거짓 상관 없이 함수 처리 값을 전달 해 준다.  
+이것도, 최종 결과를 사용하기 위해서는 list로 최종 결과를 받야한다.
+```python
+list(map(lambda x:x**2,[1,2,3,4]))
+```
