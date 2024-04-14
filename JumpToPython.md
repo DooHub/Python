@@ -80,7 +80,7 @@ Cookie()라는 Class가 있다고 할 때,
 자체만을 말 할 때 a=Cookie()이면 a는 객체이고, Cookie는 클래스 이다.
 
 ### Module 사용 방법
-실행 source나 python 경로상에 사용하고자 하는 Module 파일이 위치 혹은 접근 가능해야 한다.
+실행 source나 python 경로상에 사용하고자 하는 Module 파일이 위치 혹은 접근 가능해야 한다.  
 mod1이라는 모듈 내에 add와 sub 함수가 있는 경우  
 1. import 모듈이름  
 ```python
