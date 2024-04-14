@@ -148,7 +148,30 @@ class에 사용 할 경우, overriding방법을 사용하여 해당 Method의 Er
 class Bird:
   def fly(self):
     raise NotImplementedError
+### filter 함수
+첫번째 인수로 함수 이름, 두 번째 인수로 반복 가능한 자료(통상 List)받아 두 번째 인수 중 첫번째 인수(함수)에 대입 할 경우 '참'인 값만 반환  
+반환 된 값들이 있는 주소를 알려 주기 때문에 최종에는 List로 형 변환을 해야 한다.
+```python
+#code구현 without filter
+def positive(l):
+  result=[]
+  for i in l:
+    if i>0:
+      result.append(i)
+  return result
+# filter 사용 경우 1
+def filter_positive(x):
+  return x>0:
 
+a=[1,-3,3,4,-5]
+
+print(positive(a))
+print(list(filter(filter_positive,a)))
+
+# filter 사용 경우 2 lambda이용
+print(list(filter(lambda x:x>0,a)))
+  
+```
 class Eagle(Bird):
   def fly(self):
     print("Overriding to avoid error")
