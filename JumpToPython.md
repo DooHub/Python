@@ -16,7 +16,7 @@ for i in range(3):
 
 ```
 
-### Lis Comprehension  
+### List Comprehension  
 [표현식 for 항목 1 in 반복 가능한 객체1 if 조건 1  
         for 항목 2 in 반복 가능한 객체2 if 조건 2  
         ...  
