@@ -44,3 +44,73 @@ class KiaK3:
     def owner(self, name):
         self.name = name  # 인스턴스 멤버
 ```
+brand, model의 값은 KiaK3클래스를 통해서 생성되는 모든 객체가 공유하게 됩니다.  
+반면 name이라는 변수는 객체마다 고유의 값을 가지게 됩니다.  
+인스턴스 멤버는 메서드 안에 self.멤버 이름을 통해 선언할 수 있습니다. (특정 객체의 멤버이기 때문에 self.멤버 이름의 형식으로 선언하는 것입니다.)  
+위 KiaK3 클래스를 생성하는 아래 코드 예시를 참고하세요.  
+```python
+car1 = KiaK3()
+car2 = KiaK3()
+car1.name = "하얀 토끼"
+car2.name = "엘리스"
+
+# "차 주인은 하얀 토끼"를 출력
+print("차 주인은", car1.name)
+
+# "브랜드/모델: 기아 K3"를 출력
+print("브랜드/모델:", car1.brand, car1.model)
+
+# "차 주인은 엘리스"를 출력
+print("차 주인은", car2.name)
+
+# "브랜드/모델: 기아 K3"를 출력
+print("브랜드/모델:", car2.brand, car2.model)
+```
+
+# 3. 메서드 이해하기
+메서드는 함수와 같은 역할을 합니다.  
+
+### 메서드 선언 방법  
+첫 번째 인자는 관례상 반드시 self여야 하며, 이는 클래스로 생성된 객체를 의미합니다.  
+
+set_owner 메서드에 객체와 name을 인자로 전달  
+인스턴스 멤버 owner에 입력받은 두 번째 인자name을 저장  
+설정된 차 주인을 출력  
+
+```python
+class Car:
+    def set_owner(self, name):
+        self.owner = name
+        print("차 주인:", name)
+```
+### 메서드 호출 방법
+클래스 이름을 이용한 메서드를 호출: self인자 필요  
+객체 이름을 이용한 메서드를 호출: self인자 생략  
+```python
+# Car 클래스의 객체를 생성하여 my_car에 저장
+my_car = Car()
+
+# 클래스 이름인 Car로 메서드 호출
+Car.set_owner(my_car, "엘리스")
+
+# 객체 이름인 my_car로 메서드 호출
+my_car.set_owner("엘리스")
+```
+# 4. 생성자 이해하기
+생성자는 객체가 생성될 때마다 자동으로 실행되는 메서드입니다. 생성자는 클래스 내에서 다음과 같이 정의합니다. 
+일반적으로 생성자는 인스턴스 변수를 설정해 주는 등의 초기화 작업을 수행합니다. 
+생성자는 self 외에 여러 개의 인자를 가질 수 있습니다. 다음은 이름과 나이를 인자로 받는 클래스 예시입니다.  
+이 클래스의 객체는 다음과 같이 생성할 수 있습니다.
+```python
+def __init__(self):
+    # 여기에 생성자에서 처리하고자 하는 내용을 넣습니다.
+
+
+
+class Person:
+    def __init__(self, name, age):
+        self.name = name
+        self.age = age
+
+person = Person("길동", 20)
+```
