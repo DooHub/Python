@@ -129,4 +129,25 @@ np.split(나눌 배열, [인덱스들], axis)
     print(result2[1], "\n")
     print(result2[2], "\n")
 ```
+## 3)집계함수
+```python
+    print(matrix)
 
+    # Q1. sum 함수로 matrix의 총 합계를 구해 출력해보세요.
+    print(np.sum(matrix))
+    
+    # Q2. sum 함수의 axis 매개변수로 각 열의 합을 구해 출력해보세요.
+    print(np.sum(matrix,axis=0))
+    # Q3. sum 함수의 axis 매개변수로 각 행의 합을 구해 출력해보세요.
+    print(np.sum(matrix,axis=1))
+    # Q4. max 함수로 matrix 중 최댓값을 구해 출력해보세요.
+    print(np.max(matrix))
+    # Q5. min 함수로 matrix 중 최솟값을 구해 출력해보세요.
+    print(np.min(matrix))
+    # Q6. mean 함수로 matrix의 평균값을 구해 출력해보세요.
+    print(np.mean(matrix))
+    # Q7. std 함수로 matrix의 표준편차를 구해 출력해보세요.
+    print(np.std(matrix))
+    
+    print(np.min(matrix,axis=0))
+```
