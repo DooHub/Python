@@ -39,5 +39,10 @@ print(population)
     # DataFrame에 1인당 GDP를 구한 값을 추가 합니다.
     country["gdp_per_pop"]=country["gdp"]/country["population"]
 
+    # china 값만 출력 합니다.
+    print(country.loc["chilna"])
+    print(country.iloc[2])
+
+
     print(country)
 ```
