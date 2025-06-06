@@ -102,3 +102,46 @@ apply() 를 이용하면 함수를 이용하여 데이터 프레임에 값을 �
     # 람다 표현식으로도 적용하기
     df["Square"]=df["Num"].apply(lambda x : x**2)
 ```
+# 5. 그룹으로 묶기
+groupby() 함수를 이용하면 키 값을 기준으로 그룹으로 묶을 수 있습니다.  
+``` python
+
+    import pandas as pd
+
+    df = pd.DataFrame(
+        {
+            "class": ["A", "B", "C", "A", "B", "C"],
+            "Korean": [100, 96, 94, 92, 90, 86],
+            "Math": [85, 88, 91, 94, 97, 100],
+        }
+    )
+    print("DataFrame:")
+    print(df, "\n")
+
+    # groupby 함수를 이용해봅시다.
+    # class를 기준으로 묶어 합계를 구해보세요.
+    print(df.groupby("class").sum())
+```
+
+# 6. Aggregate 함수 사용하기
+총합, 합계라는 의미 Aggregate사용 DataFrame내 값을 통계적으로 사용 가능합니다.
+```python
+    import pandas as pd
+    import numpy as np
+
+    df = pd.DataFrame(
+        {"Korean": [100, 96, 94, 92, 90, 86], "Math": [85, 88, 91, 94, 97, 100]}
+    )
+    print("DataFrame:")
+    print(df, "\n")
+
+    # 데이터 프레임에서 Korean과 Math 각각의 최솟값과 평균값, 최댓값을 출력해봅시다.
+    print(df.aggregate([min,np.mean,max]))
+
+    print(df, "\n")
+
+    # Korean 과 Math에 대해 각각의 함수를 적용 할 때는 딕셔너를 사용 합니다.
+    # Column을 key 값으로, Value에 함수를 넣으면 됩니다.
+    print(df.aggregate({"Korean" : np.sum, "Math" : max}))
+```
+
