@@ -168,3 +168,78 @@ if seq:
 if not seq:
 
 ```
+
+# 접두사 찾기
+슬라이싱을 이용하는 방법이 있지만, 이는 좋은 방법이 아닙니다.  
+문자열의 접두사를 찾기 위해서는 문자열 슬라이싱 대신 startswith() 함수를 사용하는 것이 좋습니다.  
+startswith()를 이용하면 인덱스를 지정할 필요가 없어 깨끗하고 오류 발생 가능성이 낮습니다.
+endswith()는 끝에서 찾는 것입니다.
+```
+#잘못된 예시
+
+if foo[:3] == 'bar':
+
+#올바른 예시
+
+if foo.startswith('bar'):
+```
+
+# 상속
+상속이란 부모 클래스의 멤버를 자식 클래스에 물려주는 것을 말합니다.  
+클래스의 재사용을 위해서 상속을 사용해야 하지만 상속은 원하지 않는 메서드까지 상속되는 문제가 있습니다.  
+이렇게 문제 해결을 위해 자주 사용되지만 안 좋은 결과를 가져오는 것을 안티 패턴이라고 합니다.  
+상속 안티 패턴을 해결하기 위한 방법으로 파이썬의 컴포지션(Composition)이 있습니다.  
+컴포지션을 이용하면 원하는 메서드만을 상속할 수 있는데, 생성자에 상속하려고 했던 클래스를 가져와 해당 클래스의 메서드를 이용해 구현하는 것입니다.  
+```python
+
+'''숫자를 2로 나눈 나머지와 3으로 나눈 나머지를 반환하는 메서드를 가진 FindSix 클래스와 2로 나눈 나머지와 5로 나눈 나머지를 반환하는 메서드를 가진 FindTen 클래스가 있습니다.  
+FindSix 클래스가 FindTen에 있는 five 메서드를 사용할 수 있도록 컴포지션을 이용해 구현해보세요.'''
+#문제
+class FindTen:
+    def __init__(self, number):
+        self.number = number
+
+    def two(self):
+        return self.number % 2
+
+    def five(self):
+        return self.number % 5
+
+
+class FindSix:
+    def __init__(self, number):
+        self.number = number
+
+    def two(self):
+        return self.number % 2
+
+    def three(self):
+        return self.number % 3
+
+
+# 정답
+class FindTen:
+    def __init__(self, number):
+        self.number = number
+
+    def two(self):
+        return self.number % 2
+
+    def five(self):
+        return self.number % 5
+
+
+class FindSix:
+    def __init__(self, number):
+        self.number = number
+        self.find_five=FindTen(number)
+
+    def two(self):
+        return self.number % 2
+
+    def three(self):
+        return self.number % 3
+
+    def five(self):
+        return self.find_five.five()
+```
