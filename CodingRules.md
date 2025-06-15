@@ -24,3 +24,18 @@
 
 ## 리팩토링(Refactoring)이란?
 리팩토링은 프로그램 결과의 변경 없이 코드의 구조를 재조정하는 것을 의미합니다. 즉, 위와 같은 코드 스멜을 제거하여 코드의 품질을 향상하는 것을 의미합니다.
+
+## 괄호 사용 관련
+```python
+#잘못 예시
+my_list1[ 0 ]
+my_list2 [1]
+my_dictionary1 = {"one" : 1}
+my_dictionary2 = { "two": 2 }
+function( parameter )
+
+#바른예시
+my_list[0]
+my_dictionary = {"one": 1}
+function(parameter)
+```
