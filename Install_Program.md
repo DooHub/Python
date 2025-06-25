@@ -1,4 +1,4 @@
-# ㅑInno Setup Compiler
+# Inno Setup Compiler
 
 
 [Inno Setup사용법](https://fred16157.github.io/etc/make-installer-with-inno-setup/).
