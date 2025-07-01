@@ -1,3 +1,5 @@
+# 1. VScode 설치
+
 # Inno Setup Compiler
 
 
