@@ -1,10 +1,10 @@
-#1. 설치 필요 프로그램
+# 1. 설치 필요 프로그램
 
 1.innosetup-6.7.2.exe (exe file 포함해서 배포-설치 할 수 있게 만들어 주는 것)
 2.pyinstaller : python code를 실행 파일(exe나 dll로 만들어주는 것)
 
 
-#2. exe file 만들기
+# 2. exe file 만들기
 Test.py라는 파일을 exe만들기
 
 pyinstaller --onefile --windowed --add-data "logo.png;." --add-data "Background_Img.png;." --icon="D:\my_icon.ico" Test.py
@@ -20,4 +20,22 @@ pyinstaller --onefile --windowed --add-data "logo.png;." --add-data "Background_
    "내 파이썬 코드가 사용하는 이미지 파일들도 .exe 파일 안에 같이 집어넣어 줘.
    "구조는 "원본_파일_경로;복사될_내부_경로" 형식입니다.logo.png;.
    $\rightarrow$ 현재 폴더에 있는 logo.png 파일을 빌드된 프로그램의 루트(주소 상 가장 기본이 되는 위치, .)에
-   넣으라는 뜻입니다.세미콜론(;)은 윈도우(Windows) 운영체제에서 경로를 구분할 때 사용하는 기호입니다. 
+   넣으라는 뜻입니다.세미콜론(;)은 윈도우(Windows) 운영체제에서 경로를 구분할 때 사용하는 기호입니다.
+
+# 3. exe build용 bat파일
+  기존 폴더는 삭제 하고 build할 수 있게 구성.
+  ico같은 그림 파일도 exe 실행 필요 
+
+  '''
+   rmdir /s /q build
+   rmdir /s /q dist
+   del Test.spec
+
+   pyinstaller --onefile --windowed --add-data "logo.png;." --add-data "Background_Img.png;." --icon="D:\my_icon.ico" Test.py
+
+   if exist "dist" (
+       copy /Y "D:\my_icon.ico" "dist\MDI.ico"
+   )
+
+  '''
+  
